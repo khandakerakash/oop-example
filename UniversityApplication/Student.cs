@@ -17,5 +17,15 @@
         {
             return this.Email;
         }
+
+        public string SetName()
+        {
+            return this.Name = Name;
+        }
+        
+        public string GetName()
+        {
+            return this.Name;
+        }
     }
 }

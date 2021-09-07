@@ -25,15 +25,30 @@ namespace UniversityApplication
                 // Console.WriteLine(university.CreateDepartment(cse));
                 // Console.WriteLine(university.CreateDepartment(bba));
                 // Console.WriteLine(university.CreateDepartment(math));
-                
+
                 Student akash = new Student("Khandaker Akash", "akash@gmial.com", "120");
                 Student deb = new Student("Deb Biswas", "deb@gmial.com", "115");
-
-                cse.CreateStudent(akash);
-                cse.CreateStudent(deb);
+                Student shadhon = new Student("Shadhon", "shadhon@gmial.com", "114");
+                Student raju = new Student("Raju", "raju@gmial.com", "113");
+                Student rafi = new Student("Rafi", "rafi@gmial.com", "112");
                 
-                // Console.WriteLine(cse.CreateStudent(akash));
-                // Console.WriteLine(cse.CreateStudent(deb));
+
+                // cse.CreateStudent(akash);
+                // cse.CreateStudent(deb);
+                // cse.CreateStudent(shadhon);
+                // cse.CreateStudent(raju);
+                // cse.CreateStudent(rafi);
+                
+                Console.WriteLine(cse.CreateStudent(akash));
+                Console.WriteLine(cse.CreateStudent(deb));
+
+                // cse.GetAllStudents();
+
+                // cse.GetAStudent("akash@gmail.com");
+                
+                Console.WriteLine(cse.GetAStudent("akash@gmail.com"));
+                
+                Console.WriteLine(cse.GetAllStudents());
             }
             catch (Exception e)
             {
