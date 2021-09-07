@@ -25,14 +25,21 @@ namespace UniversityApplication
                 // Console.WriteLine(university.CreateDepartment(cse));
                 // Console.WriteLine(university.CreateDepartment(bba));
                 // Console.WriteLine(university.CreateDepartment(math));
+                
+                Student akash = new Student("Khandaker Akash", "akash@gmial.com", "120");
+                Student deb = new Student("Deb Biswas", "deb@gmial.com", "115");
+
+                cse.CreateStudent(akash);
+                cse.CreateStudent(deb);
+                
+                // Console.WriteLine(cse.CreateStudent(akash));
+                // Console.WriteLine(cse.CreateStudent(deb));
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 throw;
             }
-            
-            //Console.ReadKey();
         }
     }
 }

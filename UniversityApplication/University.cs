@@ -29,18 +29,18 @@ namespace UniversityApplication
 
         private void ValidateDepartment(Department department)
         {
-            var iSDepartmentCodeExists = this.Departments.FirstOrDefault(x => x.GetCode() == department.GetCode());
-            var iSDepartmentNameExists = this.Departments.FirstOrDefault(x => x.GetName() == department.GetName());
+            var iSCodeExists = this.Departments.FirstOrDefault(x => x.GetCode() == department.GetCode());
+            var iSNameExists = this.Departments.FirstOrDefault(x => x.GetName() == department.GetName());
 
-            if (iSDepartmentCodeExists != null || iSDepartmentNameExists != null)
+            if (iSCodeExists != null || iSNameExists != null)
             {
                 var message = "Department ";
-                if (iSDepartmentCodeExists != null)
+                if (iSCodeExists != null)
                 {
                     message += "code: " + $"{department.GetCode()}" + ", already exists.\n";
                 }
 
-                if (iSDepartmentNameExists != null)
+                if (iSNameExists != null)
                 {
                     message += "name: " + $"{department.GetName()}" + ", already exists.\n";
                 }

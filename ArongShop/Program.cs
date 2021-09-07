@@ -11,8 +11,6 @@ namespace ArongShop
 
             ContractualEmployee contractualEmployee = new ContractualEmployee("Mr.", "Deb", "1999123456789", 500000, 5);
             Console.WriteLine(contractualEmployee.GetFullInformation());
-            
-            Console.ReadKey();
         }
     }
 }
