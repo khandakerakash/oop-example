@@ -10,6 +10,8 @@ namespace UniversityApplication
         private string Code;
         private string Name;
         private List<Student> Students;
+       // public IReadOnlyList<Student> StudentsList = Students.ToList().AsReadOnly();
+        
 
         public Department(string code, string name)
         {
@@ -53,7 +55,7 @@ namespace UniversityApplication
 
         public Student UpdateStudent(Student student, string email)
         {
-            var result = new Student("", "", "");
+            
             
             var studentInfo = this.Students.FirstOrDefault(x => x.GetEmail() == email);
             
@@ -61,45 +63,27 @@ namespace UniversityApplication
             {
                 throw new Exception("No Data Found.");
             }
-            else
-            {
-                foreach (var aStudent in Students)
-                {
-                    if (email == student.GetEmail())
-                    {
-                        //aStudent.GetName() = student.SetName();
-
-                        result = aStudent;
-                    }
-                }
- 
-            }
-            
-            return result;
+            studentInfo.Update("Akash","email");
+            return studentInfo;
         }
 
-        public Student DeleteStudent(string email)
+        public bool DeleteStudent(string email)
         {
             var student = this.Students.FirstOrDefault(x => x.GetEmail() == email);
-            
             if (student == null)
             {
                 throw new Exception("No Data Found.");
             }
-            
-            this.Students.Where(x => x.GetEmail() != email).ToList();
-            return student;
+            return  Students.Remove(student);
         }
 
         private void ValidateStudent(Student student)
         {
             var isEmailExists = this.Students.FirstOrDefault(x => x.GetEmail() == student.GetEmail());
-
             if (isEmailExists != null)
             {
                 throw new Exception("Student email: " + $"{student.GetEmail()}, is already exists.");
             }
-
             if (!IsValidEmail(student.GetEmail()))
             {
                 throw new Exception("Invalid email address.");
