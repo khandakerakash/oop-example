@@ -9,8 +9,8 @@ namespace UniversityApplication
     {
         private string Code;
         private string Name;
-        private List<Student> Students;
-       // public IReadOnlyList<Student> StudentsList = Students.ToList().AsReadOnly();
+        private readonly List<Student> Students = new List<Student>();
+        public IReadOnlyList<Student> StudentsList => Students.AsReadOnly();
         
 
         public Department(string code, string name)
